@@ -1,0 +1,57 @@
+{
+    "name": "samuelbie/mpesa",
+    "type": "library",
+    "description": "This is an interface to comunicate with Mpesa Open API Mozambique",
+    "keywords": [
+        "Laravel", "OPEN-API", "Mpesa", "M-Pesa",  "c2b",  "b2c",  "b2b",  "reversal",  "query", "Php"
+    ],
+    "homepage": "samuel-bie.github.io",
+    "license": "MIT",
+    "minimum-stability": "dev",
+
+    "authors": [
+        {
+            "name": "Samuel Bie",
+            "email": "samuelbie@outlook.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2"
+    },
+    "require-dev": {
+    },
+    "suggest": {
+    },
+    "autoload": {
+        "psr-4": {
+            "samuelbie\\Mpesa\\": "src"
+        },
+        "files": [
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Awssat\\Visits\\VisitsServiceProvider"
+            ],
+            "aliases": {
+                "Visits": "Awssat\\Visits\\Visits"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
