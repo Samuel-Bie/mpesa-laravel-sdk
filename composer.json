@@ -3,12 +3,11 @@
     "type": "library",
     "description": "This is an interface to comunicate with Mpesa Open API Mozambique",
     "keywords": [
-        "Laravel", "OPEN-API", "Mpesa", "M-Pesa",  "c2b",  "b2c",  "b2b",  "reversal",  "query", "Php"
+        "Laravel", "OPEN-API", "Mpesa", "M-Pesa",  "c2b",  "b2c",  "b2b",  "reversal",  "query", "PHP"
     ],
-    "homepage": "samuel-bie.github.io",
+    "homepage": "https://samuel-bie.github.io",
     "license": "MIT",
     "minimum-stability": "dev",
-
     "authors": [
         {
             "name": "Samuel Bie",
