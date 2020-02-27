@@ -63,7 +63,8 @@ class Transaction implements TransactionInterface
      * @return TransactionResponseInterface
      * @throws Exception
      */
-    public function c2b( float $amount, string $msisdn, string $reference, string $third_party_reference): TransactionResponseInterface {
+    public function c2b(float $amount, string $msisdn, string $reference, string $third_party_reference): TransactionResponseInterface
+    {
         $msisdn = ValidationHelper::normalizeMSISDN($msisdn);
         $amount = round($amount, 2);
 
@@ -133,7 +134,8 @@ class Transaction implements TransactionInterface
      * @return TransactionResponseInterface
      * @throws Exception
      */
-    public function b2c(float $amount,string $msisdn, string $reference, string $third_party_reference): TransactionResponseInterface {
+    public function b2c(float $amount, string $msisdn, string $reference, string $third_party_reference): TransactionResponseInterface
+    {
         $msisdn = ValidationHelper::normalizeMSISDN($msisdn);
         $amount = round($amount, 2);
 
@@ -219,7 +221,7 @@ class Transaction implements TransactionInterface
             'input_ReceiverPartyCode' => $receiver_party_code,
         ];
 
-            $headers = array_merge($this->headers, [
+        $headers = array_merge($this->headers, [
             'Authorization' => $this->config->getBearerToken(),
             'Content-Length' => strlen(json_encode($payload)),
             'Origin' => $this->config->getOrigin(),
@@ -263,7 +265,6 @@ class Transaction implements TransactionInterface
                 'message' => 'Cannot process now'
             ];
         }
-
     }
 
     /**

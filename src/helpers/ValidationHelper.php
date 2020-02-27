@@ -1,5 +1,7 @@
 <?php
+
 namespace samuelbie\mpesa\helpers;
+
 /**
  * ValidationHelper validates and normalizes MSISDN as per ITU E.164 standard
  *
