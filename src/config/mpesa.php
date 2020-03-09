@@ -1,7 +1,6 @@
 <?php
 
 return [
-    'pkg' => 'pj',
     'provider_number' => env('MPESA_PROVIDER_NUMBER'),
 
     "c2b_endpoint" => env('MPESA_C2B_HOST'),
@@ -20,7 +19,7 @@ return [
     'api_host'              => env('MPESA_API_HOST'),
     'api_key'               => env('MPESA_API_KEY'),
     'origin'                => env('MPESA_ORIGIN', '*'),
-    'service_provider_code' => env('MPESA_SERVICE_PROVIDER_CODE', '171717'),
+    'service_provider_code' => env('MPESA_PROVIDER_NUMBER', '171717'),
     'initiator_identifier'  => env('MPESA_INITIATOR_IDENTIFIER'),
     'security_credential'   => env('MPESA_SECURITY_CREDENTIAL')
 ];
