@@ -1,5 +1,4 @@
 <?php
-
 return [
     'provider_number' => env('MPESA_PROVIDER_NUMBER'),
 
@@ -13,7 +12,7 @@ return [
     "query_method" => env('MPESA_Query_METHOD', "GET"),
 
     "reversal_host" => env('MPESA_Reversal_HOST'),
-    "reversal_method" => env('MPESA_Reversal_METHOD',"PUT"),
+    "reversal_method" => env('MPESA_Reversal_METHOD', "PUT"),
 
     'public_key'            => env('MPESA_PUBLIC_KEY'),
     'api_host'              => env('MPESA_API_HOST'),
