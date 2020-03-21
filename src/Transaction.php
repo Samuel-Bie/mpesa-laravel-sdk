@@ -93,6 +93,9 @@ class Transaction implements TransactionInterface
         ];
 
 
+       return $this->executeRequest($endpoint, $method, $options);
+
+
     }
 
     /**
