@@ -94,8 +94,6 @@ class Transaction implements TransactionInterface
 
 
        return $this->executeRequest($endpoint, $method, $options);
-
-
     }
 
     /**
@@ -276,12 +274,13 @@ class Transaction implements TransactionInterface
             $response = $th->getResponse();
             return new TransactionResponse($response);
         } catch (ConnectException $th) {
-            // Connection Error
+            // Connection Error, on range 400
             $response = $th->getResponse();
             return new TransactionResponse($response);
         } catch (TooManyRedirectsException $th) {
+            // Error on range 300
             $response = $th->getResponse();
-            return new TransactionResponse($response);s
+            return new TransactionResponse($response);
         }
     }
 }
