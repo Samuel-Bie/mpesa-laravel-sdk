@@ -77,11 +77,14 @@ class TransactionResponse implements TransactionResponseInterface
      * TransactionResponse constructor.
      * @param string $response
      */
-    public function __construct(ResponseInterface $response)
+    public function __construct(ResponseInterface $response = null)
     {
-        $body = json_decode($response->getBody()->getContents());
+
+
+        $body = $response ? json_decode($response->getBody()->getContents()) : json_decode([]);
+
         $this->response = $response;
-        $this->statusCode  = $response->getStatusCode();
+        $this->statusCode  = $response? $response->getStatusCode() : 460;
         $this->body  = $body;
         $this->code = $body->output_ResponseCode ?? '';
         $this->description = $body->output_ResponseDesc ?? '';

@@ -275,8 +275,9 @@ class Transaction implements TransactionInterface
             return new TransactionResponse($response);
         } catch (ConnectException $th) {
             // Connection Error, on range 400
-            $response = $th->getResponse();
-            return new TransactionResponse($response);
+            // $response = $th->getResponse();
+
+            return new TransactionResponse();
         } catch (TooManyRedirectsException $th) {
             // Error on range 300
             $response = $th->getResponse();
