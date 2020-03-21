@@ -92,7 +92,6 @@ class Transaction implements TransactionInterface
             'json' => $payload,
         ];
 
-
        return $this->executeRequest($endpoint, $method, $options);
     }
 
