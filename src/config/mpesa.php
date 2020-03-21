@@ -2,17 +2,19 @@
 return [
     'provider_number' => env('MPESA_PROVIDER_NUMBER'),
 
-    "c2b_endpoint" => env('MPESA_C2B_HOST'),
+
+    "c2b_endpoint"      => env('MPESA_C2B_ENDPOINT'),
+    "b2c_endpoint"      => env('MPESA_B2C_ENDPOINT'),
+    "query_endpoint"    => env('MPESA_Query_ENDPOINT'),
+    "reversal_endpoint" => env('MPESA_Reversal_ENDPOINT'),
+
+
+
     "c2b_method" => env('MPESA_C2B_METHOD', "POST"),
-
-    "b2c_host" => env('MPESA_B2C_HOST'),
     "b2c_method" => env('MPESA_B2C_METHOD', "POST"),
-
-    "query_host" => env('MPESA_Query_HOST'),
     "query_method" => env('MPESA_Query_METHOD', "GET"),
-
-    "reversal_host" => env('MPESA_Reversal_HOST'),
     "reversal_method" => env('MPESA_Reversal_METHOD', "PUT"),
+
 
     'public_key'            => env('MPESA_PUBLIC_KEY'),
     'api_host'              => env('MPESA_API_HOST'),
