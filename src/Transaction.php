@@ -92,7 +92,7 @@ class Transaction implements TransactionInterface
             'json' => $payload,
         ];
 
-       return $this->executeRequest($endpoint, $method, $options);
+       return $this->executeRequest($method, $endpoint, $options);
     }
 
     /**
@@ -132,7 +132,7 @@ class Transaction implements TransactionInterface
             'form_params' => $payload,
             'json' => $payload,
         ];
-       return $this->executeRequest($endpoint, $method, $options);
+       return $this->executeRequest($method, $endpoint, $options);
 
     }
 
@@ -175,7 +175,7 @@ class Transaction implements TransactionInterface
             'json' => $payload,
         ];
 
-        return $this->executeRequest($endpoint, $method, $options);
+        return $this->executeRequest($method, $endpoint, $options);
     }
 
     /**
@@ -218,7 +218,7 @@ class Transaction implements TransactionInterface
             'json' => $payload,
         ];
 
-        return $this->executeRequest($endpoint, $method, $options);
+        return $this->executeRequest($method, $endpoint, $options);
 
     }
 
@@ -252,7 +252,7 @@ class Transaction implements TransactionInterface
             'query' => $payload,
         ];
 
-        return $this->executeRequest($endpoint, $method, $options);
+        return $this->executeRequest($method, $endpoint, $options);
     }
 
 
@@ -274,8 +274,7 @@ class Transaction implements TransactionInterface
             return new TransactionResponse($response);
         } catch (ConnectException $th) {
             // Connection Error, on range 400
-            // $response = $th->getResponse();
-
+            // $response = $th->getResponse(); This method is not available 4 this error
             return new TransactionResponse();
         } catch (TooManyRedirectsException $th) {
             // Error on range 300
