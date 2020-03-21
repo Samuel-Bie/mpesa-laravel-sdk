@@ -92,37 +92,7 @@ class Transaction implements TransactionInterface
             'json' => $payload,
         ];
 
-        try {
-            //code...
-            $httpclient = new Client();
-            $response = $httpclient->request($method, $endpoint, $options);
-            // $response->getStatusCode();
-            // $response->getBody();
 
-
-            return new TransactionResponse($response);
-        } catch (ServerException $th) {
-            // Connection error in range 500
-            return (object) [
-                'status_code' => 500,
-                'message' => 'Mpesa Error'
-            ];
-        } catch (ClientException $th) {
-            // Connection error on range 400
-            $response = $th->getResponse();
-            return new TransactionResponse($response);
-        } catch (ConnectException $th) {
-            // Connection Error
-            return (object) [
-                'status_code' => 400,
-                'message' => 'Cannot process now'
-            ];
-        } catch (TooManyRedirectsException $th) {
-            return (object) [
-                'status_code' => 310,
-                'message' => 'Cannot process now'
-            ];
-        }
     }
 
     /**
@@ -162,37 +132,8 @@ class Transaction implements TransactionInterface
             'form_params' => $payload,
             'json' => $payload,
         ];
-        try {
-            //code...
-            $httpclient = new Client();
-            $response = $httpclient->request($method, $endpoint, $options);
-            // $response->getStatusCode();
-            // $response->getBody();
+       return $this->executeRequest($endpoint, $method, $options);
 
-
-            return new TransactionResponse($response);
-        } catch (ServerException $th) {
-            // Connection error in range 500
-            return (object) [
-                'status_code' => 500,
-                'message' => 'Mpesa Error'
-            ];
-        } catch (ClientException $th) {
-            // Connection error on range 400
-            $response = $th->getResponse();
-            return new TransactionResponse($response);
-        } catch (ConnectException $th) {
-            // Connection Error
-            return (object) [
-                'status_code' => 400,
-                'message' => 'Cannot process now'
-            ];
-        } catch (TooManyRedirectsException $th) {
-            return (object) [
-                'status_code' => 310,
-                'message' => 'Cannot process now'
-            ];
-        }
     }
 
     /**
@@ -234,37 +175,7 @@ class Transaction implements TransactionInterface
             'json' => $payload,
         ];
 
-        try {
-            //code...
-            $httpclient = new Client();
-            $response = $httpclient->request($method, $endpoint, $options);
-            // $response->getStatusCode();
-            // $response->getBody();
-
-
-            return new TransactionResponse($response);
-        } catch (ServerException $th) {
-            // Connection error in range 500
-            return (object) [
-                'status_code' => 500,
-                'message' => 'Mpesa Error'
-            ];
-        } catch (ClientException $th) {
-            // Connection error on range 400
-            $response = $th->getResponse();
-            return new TransactionResponse($response);
-        } catch (ConnectException $th) {
-            // Connection Error
-            return (object) [
-                'status_code' => 400,
-                'message' => 'Cannot process now'
-            ];
-        } catch (TooManyRedirectsException $th) {
-            return (object) [
-                'status_code' => 310,
-                'message' => 'Cannot process now'
-            ];
-        }
+        return $this->executeRequest($endpoint, $method, $options);
     }
 
     /**
@@ -307,37 +218,8 @@ class Transaction implements TransactionInterface
             'json' => $payload,
         ];
 
-        try {
-            //code...
-            $httpclient = new Client();
-            $response = $httpclient->request($method, $endpoint, $options);
-            // $response->getStatusCode();
-            // $response->getBody();
+        return $this->executeRequest($endpoint, $method, $options);
 
-
-            return new TransactionResponse($response);
-        } catch (ServerException $th) {
-            // Connection error in range 500
-            return (object) [
-                'status_code' => 500,
-                'message' => 'Mpesa Error'
-            ];
-        } catch (ClientException $th) {
-            // Connection error on range 400
-            $response = $th->getResponse();
-            return new TransactionResponse($response);
-        } catch (ConnectException $th) {
-            // Connection Error
-            return (object) [
-                'status_code' => 400,
-                'message' => 'Cannot process now'
-            ];
-        } catch (TooManyRedirectsException $th) {
-            return (object) [
-                'status_code' => 310,
-                'message' => 'Cannot process now'
-            ];
-        }
     }
 
     /**
@@ -370,36 +252,33 @@ class Transaction implements TransactionInterface
             'query' => $payload,
         ];
 
+        return $this->executeRequest($endpoint, $method, $options);
+    }
+
+
+    private function executeRequest($method, $endpoint, $options) : TransactionResponseInterface {
         try {
             //code...
             $httpclient = new Client();
             $response = $httpclient->request($method, $endpoint, $options);
             // $response->getStatusCode();
             // $response->getBody();
-
-
             return new TransactionResponse($response);
         } catch (ServerException $th) {
             // Connection error in range 500
-            return (object) [
-                'status_code' => 500,
-                'message' => 'Mpesa Error'
-            ];
+            $response = $th->getResponse();
+            return new TransactionResponse($response);
         } catch (ClientException $th) {
             // Connection error on range 400
             $response = $th->getResponse();
             return new TransactionResponse($response);
         } catch (ConnectException $th) {
             // Connection Error
-            return (object) [
-                'status_code' => 400,
-                'message' => 'Cannot process now'
-            ];
+            $response = $th->getResponse();
+            return new TransactionResponse($response);
         } catch (TooManyRedirectsException $th) {
-            return (object) [
-                'status_code' => 310,
-                'message' => 'Cannot process now'
-            ];
+            $response = $th->getResponse();
+            return new TransactionResponse($response);s
         }
     }
 }
