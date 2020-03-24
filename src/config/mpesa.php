@@ -22,5 +22,7 @@ return [
     'origin'                => env('MPESA_ORIGIN', '*'),
     'service_provider_code' => env('MPESA_PROVIDER_NUMBER', '171717'),
     'initiator_identifier'  => env('MPESA_INITIATOR_IDENTIFIER'),
-    'security_credential'   => env('MPESA_SECURITY_CREDENTIAL')
+    'security_credential'   => env('MPESA_SECURITY_CREDENTIAL'),
+
+    'mpesa_percentage_fee' => env('MPESA_FEE', 3)
 ];
