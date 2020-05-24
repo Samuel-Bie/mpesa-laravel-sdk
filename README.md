@@ -1,11 +1,14 @@
 <p align="center"><img src="https://samuel-bie.github.io/images/larapesa.png" width="400"></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-[![Latest Version](https://img.shields.io/github/issues/Samuel-Bie/mpesa-laravel-sdk)](https://github.com/Samuel-Bie/mpesa-laravel-sdk/releases)
+<a href="https://packagist.org/packages/samuelbie/mpesa"><img src="https://poser.pugx.org/samuelbie/mpesa/v" alt="Ultima Versão estável"></a>
+<a href="https://packagist.org/packages/samuelbie/mpesa"><img src="https://poser.pugx.org/samuelbie/mpesa/downloads" alt="Total Downloads"></a>
+<a href="https://github.com/Samuel-Bie/mpesa-laravel-sdk/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Samuel-Bie/mpesa-laravel-sdk"></a>
+<a href="https://github.com/Samuel-Bie/mpesa-laravel-sdk/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/Samuel-Bie/mpesa-laravel-sdk"></a>
+<a href="https://github.com/Samuel-Bie/mpesa-laravel-sdk/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Samuel-Bie/mpesa-laravel-sdk"></a>
+<a href="https://packagist.org/packages/samuelbie/mpesa"><img src="https://poser.pugx.org/samuelbie/mpesa/license" alt="License"></a>
+<a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FSamuel-Bie%2Fmpesa-laravel-sdk"><img alt="Twitter" src="https://img.shields.io/twitter/url?label=Samuel%20Bi%C3%A9&style=social&url=https%3A%2F%2Ftwitter.com%2FSamuelbie"></a>
+
 </p>
 
 # **MPesa Laravel SDK**
