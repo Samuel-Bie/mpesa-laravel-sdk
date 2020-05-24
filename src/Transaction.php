@@ -223,14 +223,11 @@ class Transaction implements TransactionInterface
 
     /**
      * Initiates a transaction Query on the M-Pesa API.
-     * @param string $query_reference
-     * @param string $third_party_reference
+     * @param string $query_reference Transaction id/ Conversation ID (Gerado pelo MPesa)
+     * @param string $third_party_reference  Referencia única da transacao (Gerado pelo sistema de terceiro). Ex: 1285GVHss
      * @return TransactionResponseInterface
-     */
-    public function query(
-        string $query_reference,
-        string $third_party_reference
-    ): TransactionResponseInterface {
+    */
+    public function query(string $query_reference, string $third_party_reference): TransactionResponseInterface {
         $payload = [
             'input_QueryReference' => $query_reference,
             'input_ServiceProviderCode' => $this->config->getServiceProviderCode(),
@@ -242,7 +239,6 @@ class Transaction implements TransactionInterface
 
         $headers = array_merge($this->headers, [
             'Authorization' => $this->config->getBearerToken(),
-            'Content-Length' => strlen(json_encode($payload)),
             'Origin' => $this->config->getOrigin(),
         ]);
 
@@ -250,7 +246,6 @@ class Transaction implements TransactionInterface
             'headers' => $headers,
             'query' => $payload,
         ];
-
         return $this->executeRequest($method, $endpoint, $options);
     }
 
