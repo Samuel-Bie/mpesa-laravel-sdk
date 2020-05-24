@@ -149,14 +149,121 @@ $response = $mpesa->b2c('10','258845968745', 'Comissao' ,'unique_reference');
 
 #### [Transferencia para Entidade (B2B)](https://developer.mpesa.vm.co.mz/apis/4/3)
 
-#### [Reversção  (Query Transaction Status)](https://developer.mpesa.vm.co.mz/apis/2/3)
+#### [Reverção  (Reversal)](https://developer.mpesa.vm.co.mz/apis/2/3)
+
+Assinatura
+
+```php
+
+    /**
+     * Initiates a Reversal transaction on the M-Pesa API.
+     * @param float $amount Valor a ser revertido
+     * @param string $transaction_id ID Transascao que precisa ser revertida
+     * @param string $third_party_reference  Referencia única da transacao. Ex: 1285GVHss
+     * @return TransactionResponseInterface
+    */
+    public function reversal(
+        float $amount,
+        string $transaction_id,
+        string $third_party_reference
+    ): TransactionResponseInterface
+```
+
+Exemplo
+
+```php
+use samuelbie\mpesa\Transaction;
+$mpesa = new Transaction();
+$response = $mpesa->reversal(10,'ACK19SSS', 'Agua2020');
+```
 
 #### [Consulta de estado  (Query Transaction Status)](https://developer.mpesa.vm.co.mz/apis/1/3/)
 
+```php
+/**
+ * Initiates a transaction Query on the M-Pesa API.
+ * @param string $query_reference Transaction id/ Conversation ID (Gerado pelo MPesa)
+ * @param string $third_party_reference  Referencia única da transacao (Gerado pelo sistema de terceiro). Ex: 1285GVHss
+ * @return TransactionResponseInterface
+*/
+public function query(string $query_reference, string $third_party_reference): TransactionResponseInterface
+```
+
+Exemplo
+
+```php
+use samuelbie\mpesa\Transaction;
+$mpesa = new Transaction();
+$response = $mpesa->query('56b97c7a59dd40738843ca7234796c4d', 'Agua2020');
+```
+
+
+
+### Resultados
+
+Todas as operações de ou métodos disponiveis retornam um objecto de ***TransactionResponseInterface***, esta interface ordena que os que a implementam, implementem os métodos:
+
+```php
+    /**
+     * Returns the Response Code
+     *
+     * @return string
+     */
+    public function getCode(): string;
+
+    /**
+     * Returns the response description
+     *
+     * @return string
+     */
+    public function getDescription(): string;
+
+    /**
+     * Returns the TransactionID
+     *
+     * @return string
+     */
+    public function getTransactionID(): string;
+
+    /**
+     * Returns the Conversation ID
+     *
+     * @return string
+     */
+    public function getConversationID(): string;
+
+    /**
+     * Returns the Transaction Status from Query API
+     *
+     * @return string
+     */
+    public function getTransactionStatus(): string;
+
+    /**
+     * Returns the raw response from M-Pesa API
+     *
+     * @return string
+     */
+    public function getResponse(): string;
+
+    /**
+     * Returns the Response Code
+     * @return string
+     */
+    public function getStatusCode(): string;
+
+
+    /**
+     * Returns the JSON response from M-Pesa API
+     * @return string
+     */
+    public function getBody();
+
+```
 
 ## Contributo
 
-Desde ja queremos agradecer aos criadores do pacote para PHP [abdulmueid\mpesa](https://github.com/abdulmueid/mpesa-php-api), uma vez que este pacote é uma adaptação do pacote por eles criados.
+Desde ja queremos agradecer aos criadores do pacote para PHP [abdulmueid\mpesa](https://github.com/abdulmueid/mpesa-php-api), uma vez que este pacote é uma adaptação do pacote por eles criados. Aqui vai meu Kanimanbo a vocês
 
 ## Vulnerabilidades de Segurança
 
