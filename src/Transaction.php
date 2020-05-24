@@ -81,7 +81,6 @@ class Transaction implements TransactionInterface
 
         $headers = array_merge($this->headers, [
             'Authorization' => $this->config->getBearerToken(),
-            'Content-Length' => strlen(json_encode($payload)),
             'Origin' => $this->config->getOrigin(),
         ]);
 
@@ -121,7 +120,6 @@ class Transaction implements TransactionInterface
 
         $headers = array_merge($this->headers, [
             'Authorization' => $this->config->getBearerToken(),
-            'Content-Length' => strlen(json_encode($payload)),
             'Origin' => $this->config->getOrigin(),
         ]);
 
@@ -141,7 +139,7 @@ class Transaction implements TransactionInterface
      * @param float $amount
      * @param string $receiver_party_code
      * @param string $reference
-     * @param string $third_party_reference
+     * @param string $third_party_reference  Referencia única da transacao. Ex: 1285GVHss
      * @return TransactionResponseInterface
      */
     public function b2b(
@@ -164,7 +162,6 @@ class Transaction implements TransactionInterface
 
         $headers = array_merge($this->headers, [
             'Authorization' => $this->config->getBearerToken(),
-            'Content-Length' => strlen(json_encode($payload)),
             'Origin' => $this->config->getOrigin(),
         ]);
 
@@ -180,11 +177,11 @@ class Transaction implements TransactionInterface
 
     /**
      * Initiates a Reversal transaction on the M-Pesa API.
-     * @param float $amount
-     * @param string $transaction_id
-     * @param string $third_party_reference
+     * @param float $amount Valor a ser revertido
+     * @param string $transaction_id ID Transascao que precisa ser revertida
+     * @param string $third_party_reference  Referencia única da transacao. Ex: 1285GVHss
      * @return TransactionResponseInterface
-     */
+    */
     public function reversal(
         float $amount,
         string $transaction_id,
@@ -207,7 +204,6 @@ class Transaction implements TransactionInterface
 
         $headers = array_merge($this->headers, [
             'Authorization' => $this->config->getBearerToken(),
-            'Content-Length' => strlen(json_encode($payload)),
             'Origin' => $this->config->getOrigin(),
         ]);
 

@@ -29,7 +29,7 @@ Ou por outra basta adicionar ao suas dependencias(***composer.json***):
 
 
 ```json
-"samuelbie/mpesa": "^1.2",
+"samuelbie/mpesa": "^1.3",
 ```
 
 e depois executar o comando:
