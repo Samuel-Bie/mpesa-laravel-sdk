@@ -69,7 +69,6 @@ return [
     'initiator_identifier'  => env('MPESA_INITIATOR_IDENTIFIER'),
     'security_credential'   => env('MPESA_SECURITY_CREDENTIAL'),
 
-    'mpesa_percentage_fee' => env('MPESA_FEE', 3)
 ];
 ```
 

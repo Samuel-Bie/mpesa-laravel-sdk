@@ -47,6 +47,7 @@ class Transaction implements TransactionInterface
     {
         $config = $config ? $config : new Config();
         $this->config = $config;
+
         $this->headers = [
             'Origin' => '*',
             'Content-Type' => 'application/json',
@@ -68,7 +69,7 @@ class Transaction implements TransactionInterface
         $msisdn = ValidationHelper::normalizeMSISDN($msisdn);
         $amount = round($amount, 2);
 
-        $endpoint = config('mpesa.c2b_endpoint');
+        $endpoint = $this->config->generateURI(config('mpesa.c2b_endpoint'));
         $method = config('mpesa.c2b_method');
 
         $payload = [
@@ -108,7 +109,9 @@ class Transaction implements TransactionInterface
         $msisdn = ValidationHelper::normalizeMSISDN($msisdn);
         $amount = round($amount, 2);
 
-        $endpoint = config('mpesa.b2c_endpoint');
+
+        $endpoint = $this->config->generateURI(config('mpesa.b2c_endpoint'));
+
         $method = config('mpesa.b2c_method');
         $payload = [
             'input_ServiceProviderCode' => $this->config->getServiceProviderCode(),
@@ -149,7 +152,8 @@ class Transaction implements TransactionInterface
         string $third_party_reference
     ): TransactionResponseInterface {
         $amount = round($amount, 2);
-        $endpoint = config('mpesa.b2b_endpoint');
+        $endpoint = $this->config->generateURI(config('mpesa.b2b_endpoint'));
+
         $method = config('mpesa.b2b_method');
 
         $payload = [
@@ -189,7 +193,7 @@ class Transaction implements TransactionInterface
     ): TransactionResponseInterface {
         $amount = round($amount, 2);
 
-        $endpoint = config('mpesa.reversal_endpoint');
+        $endpoint = $this->config->generateURI(config('mpesa.reversal_endpoint'));
         $method = config('mpesa.reversal_method');
 
         $payload = [
@@ -230,7 +234,8 @@ class Transaction implements TransactionInterface
             'input_ThirdPartyReference' => $third_party_reference
         ];
 
-        $endpoint = config('mpesa.query_endpoint');
+        $endpoint = $this->config->generateURI(config('mpesa.query_endpoint'));
+
         $method = config('mpesa.query_method');
 
         $headers = array_merge($this->headers, [

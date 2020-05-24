@@ -159,4 +159,16 @@ class Config implements ConfigInterface
     {
         return $this->security_credential;
     }
+
+    /**
+     * generateURI
+     *
+     * @param  mixed $endpoint
+     * Return URL String
+     * @return string
+     */
+    public function generateURI(string $endpoint): string
+    {
+        return 'https://'.$this->getApiHost().$endpoint;
+    }
 }
