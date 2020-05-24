@@ -46,40 +46,97 @@ Todas as suas configurações estarão guardas no ficheiro interno de configura�
 ```php
 <?php
 return [
-
+    /*
+    |--------------------------------------------------------------------------
+    | API host of M-Pesa API
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the API host provided by Vodacom for API operations
+    |
+    */
     'api_host'              => env('MPESA_API_HOST', 'api.sandbox.vm.co.mz'),
 
-    "c2b_endpoint"          => env('MPESA_C2B_ENDPOINT', 'https://api.sandbox.vm.co.mz:18352/ipg/v1x/c2bPayment/singleStage/'),
-    "b2c_endpoint"          => env('MPESA_B2C_ENDPOINT', 'https://api.sandbox.vm.co.mz:18345/ipg/v1x/b2cPayment/'),
-    "query_endpoint"        => env('MPESA_Query_ENDPOINT', 'https://api.sandbox.vm.co.mz:18353/ipg/v1x/queryTransactionStatus/'),
-    "reversal_endpoint"     => env('MPESA_Reversal_ENDPOINT', 'https://api.sandbox.vm.co.mz:18354/ipg/v1x/reversal/'),
+    /*
+    |--------------------------------------------------------------------------
+    | Public key for use in M-Pesa API
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the public key provided by Vodacom to you
+    |
+    */
+    'public_key'            => env('MPESA_PUBLIC_KEY'),
+    /*
+    |--------------------------------------------------------------------------
+    | API Key of M-Pesa API
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the API key provided by Vodacom to you
+    |
+    */
+    'api_key'               => env('MPESA_API_KEY'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Origin of M-Pesa API
+    |--------------------------------------------------------------------------
+    |
+    |
+    */
+    'origin'                => env('MPESA_ORIGIN', '*'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Service Provider Code of M-Pesa API
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the service provider code of M-Pesa provided by Vodacom to you
+    |
+    */
+    'service_provider_code' => env('MPESA_PROVIDER_NUMBER', '171717'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Initiator Identifier of M-Pesa API
+    |--------------------------------------------------------------------------
+    |
+    | Here you may the initiator identifier provided by Vodacom to you
+    |
+    */
+    'initiator_identifier'  => env('MPESA_INITIATOR_IDENTIFIER'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Security credential of M-Pesa API
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the security credential provided by Vodacom to you
+    |
+    */
+    'security_credential'   => env('MPESA_SECURITY_CREDENTIAL'),
+
+
+    "c2b_endpoint"          => env('MPESA_C2B_ENDPOINT', ':18352/ipg/v1x/c2bPayment/singleStage/'),
+    "b2c_endpoint"          => env('MPESA_B2C_ENDPOINT', ':18345/ipg/v1x/b2cPayment/'),
+    "query_endpoint"        => env('MPESA_Query_ENDPOINT', ':18353/ipg/v1x/queryTransactionStatus/'),
+    "reversal_endpoint"     => env('MPESA_Reversal_ENDPOINT', ':18354/ipg/v1x/reversal/'),
 
     "c2b_method"        => env('MPESA_C2B_METHOD', "POST"),
     "b2c_method"        => env('MPESA_B2C_METHOD', "POST"),
     "query_method"      => env('MPESA_Query_METHOD', "GET"),
     "reversal_method"   => env('MPESA_Reversal_METHOD', "PUT"),
-
-
-    'public_key'            => env('MPESA_PUBLIC_KEY'),
-    'api_key'               => env('MPESA_API_KEY'),
-    'origin'                => env('MPESA_ORIGIN', '*'),
-
-    'service_provider_code' => env('MPESA_PROVIDER_NUMBER', '171717'),
-
-    'initiator_identifier'  => env('MPESA_INITIATOR_IDENTIFIER'),
-    'security_credential'   => env('MPESA_SECURITY_CREDENTIAL'),
-
 ];
 ```
 
 Neste caso o passar todas as suas credenciais locais ou de produção no seu ficheiro **.env** anexe as seguintes chaves.
 
 ```env
-MPESA_API_HOST='api.sandbox.vm.co.mz' # ou api.vm.co.mz em produção
-
-MPESA_API_KEY = 'Chave de API'
-MPESA_PUBLIC_KEY = 'Chave public Fornecida no portal'
-MPESA_PROVIDER_NUMBER='Codigo de Entidade'
+MPESA_API_HOST='api.vm.co.mz' #ou api.sandbox.vm.co.mz
+MPESA_API_KEY = 'api Key'
+MPESA_PUBLIC_KEY = 'Chave Pubica='
+MPESA_PROVIDER_NUMBER='171700'
+MPESA_ORIGIN='*'
+MPESA_INITIATOR_IDENTIFIER='JMhMnVM3dddddRMA3'
+MPESA_SECURITY_CREDENTIAL='Sp0ng3dddd'
 ```
 
 
@@ -260,6 +317,11 @@ Todas as operações de ou métodos disponiveis retornam um objecto de ***Transa
 
 ```
 
+## Recomendações
+
+É recomendado que q acima de tudo o usuário desta biblioteca leia a documentação do [Open-Api](https://developer.mpesa.vm.co.mz) e entenda o principio de funcionamento desta, para que possa entender os códigos de respostas, e as mensagens.
+
+
 ## Contributo
 
 Desde ja queremos agradecer aos criadores do pacote para PHP [abdulmueid\mpesa](https://github.com/abdulmueid/mpesa-php-api), uma vez que este pacote é uma adaptação do pacote por eles criados. Aqui vai meu Kanimanbo a vocês
@@ -271,3 +333,4 @@ Se descobrires alguma vulnerabilidade neste pacote, por favor envie um email par
 ## Licença
 
 Mpesa Laravel SDK é de codigo livre sob licença [MIT license](https://opensource.org/licenses/MIT).
+
