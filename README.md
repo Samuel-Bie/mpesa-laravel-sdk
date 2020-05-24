@@ -86,7 +86,7 @@ MPESA_PROVIDER_NUMBER='Codigo de Entidade'
 
 ### Métodos disponíveis
 
-#### [Coleta  (C2B)](https://developer.mpesa.vm.co.mz/apis/3)
+#### [Coleta  (C2B)](https://developer.mpesa.vm.co.mz/apis/3/3)
 
 Assinatura
 ```php
@@ -115,7 +115,7 @@ $response = $mpesa->c2b('10','258845968745', 'reference' ,'unique_reference');
 ```
 
 
-#### [Transferencia para cliente  (B2C)](https://developer.mpesa.vm.co.mz/apis/5)
+#### [Transferencia para cliente  (B2C)](https://developer.mpesa.vm.co.mz/apis/5/3)
 
 
 Signature
@@ -144,9 +144,9 @@ $mpesa = new Transaction();
 $response = $mpesa->b2c('10','258845968745', 'Comissao' ,'unique_reference');
 ```
 
-#### [Transferencia para Entidade (B2B)](https://developer.mpesa.vm.co.mz/apis/4)
+#### [Transferencia para Entidade (B2B)](https://developer.mpesa.vm.co.mz/apis/4/3)
 
-#### [Reversção  (Query Transaction Status)](https://developer.mpesa.vm.co.mz/apis/2)
+#### [Reversção  (Query Transaction Status)](https://developer.mpesa.vm.co.mz/apis/2/3)
 
 #### [Consulta de estado  (Query Transaction Status)](https://developer.mpesa.vm.co.mz/apis/1/3/)
 
