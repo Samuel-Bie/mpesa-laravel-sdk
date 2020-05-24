@@ -56,10 +56,10 @@ class Transaction implements TransactionInterface
 
     /**
      * Initiates a C2B transaction on the M-Pesa API.
-     * @param float $amount
-     * @param string $msisdn
-     * @param string $reference
-     * @param string $third_party_reference
+     * @param float $amount Valor
+     * @param string $msisdn numero de telefone (Ex: 847386187 / +258850233654)
+     * @param string $reference Referencia da transacao. Ex: Compra de Modem 3G
+     * @param string $third_party_reference  Referencia única da transacao. Ex: 1285GVHss
      * @return TransactionResponseInterface
      * @throws Exception
      */
@@ -92,15 +92,15 @@ class Transaction implements TransactionInterface
             'json' => $payload,
         ];
 
-       return $this->executeRequest($method, $endpoint, $options);
+        return $this->executeRequest($method, $endpoint, $options);
     }
 
     /**
      * Initiates a B2C transaction on the M-Pesa API.
-     * @param float $amount
-     * @param string $msisdn
-     * @param string $reference
-     * @param string $third_party_reference
+     * @param float $amount Valor
+     * @param string $msisdn numero de telefone (Ex: 847386187 / +258850233654)
+     * @param string $reference Referencia da transacao. Ex: Pagamento de comissao de venda
+     * @param string $third_party_reference  Referencia única da transacao. Ex: 1285GVHss
      * @return TransactionResponseInterface
      * @throws Exception
      */
@@ -133,8 +133,7 @@ class Transaction implements TransactionInterface
             'json' => $payload,
         ];
 
-       return $this->executeRequest($method, $endpoint, $options);
-
+        return $this->executeRequest($method, $endpoint, $options);
     }
 
     /**
@@ -220,7 +219,6 @@ class Transaction implements TransactionInterface
         ];
 
         return $this->executeRequest($method, $endpoint, $options);
-
     }
 
     /**
@@ -239,8 +237,8 @@ class Transaction implements TransactionInterface
             'input_ThirdPartyReference' => $third_party_reference
         ];
 
-        $endpoint = config('mpesa.c2b_endpoint');
-        $method = config('mpesa.c2b_method');
+        $endpoint = config('mpesa.query_endpoint');
+        $method = config('mpesa.query_method');
 
         $headers = array_merge($this->headers, [
             'Authorization' => $this->config->getBearerToken(),
@@ -254,12 +252,11 @@ class Transaction implements TransactionInterface
         ];
 
         return $this->executeRequest($method, $endpoint, $options);
-
-
     }
 
 
-    private function executeRequest($method, $endpoint, $options) : TransactionResponseInterface {
+    private function executeRequest($method, $endpoint, $options): TransactionResponseInterface
+    {
         try {
             //code...
             $httpclient = new Client();
