@@ -3,34 +3,41 @@
     "type": "library",
     "description": "This is an interface to comunicate with Mpesa Open API Mozambique",
     "keywords": [
-        "Laravel", "OPEN-API","Mpesa SDK", "Mpesa", "M-Pesa",  "c2b",  "b2c",  "b2b",  "reversal",  "query", "PHP"
+        "Laravel",
+        "OPEN-API",
+        "Mpesa SDK",
+        "Mpesa",
+        "M-Pesa",
+        "c2b",
+        "b2c",
+        "b2b",
+        "reversal",
+        "query",
+        "PHP"
     ],
-    "homepage": "https://samuel-bie.github.io",
     "license": "MIT",
-    "minimum-stability": "stable",
-    "prefer-stable": true,
     "authors": [
         {
             "name": "Samuel Bie",
-            "email": "samuelbie@outlook.com"
+            "email": "samuelbie@outlook.com",
+            "website": "https://samuel-bie.github.io"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [],
     "require": {
         "php": "^5.5 || ^7.0",
         "ext-curl": "*",
         "guzzlehttp/guzzle": "^6.0"
     },
-    "require-dev": {
-
-    },
+    "require-dev": {},
     "autoload": {
         "psr-4": {
             "samuelbie\\mpesa\\": "src"
         },
-        "files": [
-        ]
+        "files": []
     },
-
     "extra": {
         "laravel": {
             "providers": [
