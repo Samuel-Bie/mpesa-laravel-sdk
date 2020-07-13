@@ -34,7 +34,7 @@ class Config implements ConfigInterface
      */
     private $api_host;
     /**
-     * API Key for the M-Pesa API. Used for creating authorize trasactions on the API
+     * API Key for the M-Pesa API. Used for creating authorize transactions on the API
      * @var string
      */
     private $api_key;
@@ -69,16 +69,15 @@ class Config implements ConfigInterface
      */
     public function __construct($config = null)
     {
-
         $config = $config ? $config : config('mpesa');
 
-        $this->public_key = $config['public_key'];
-        $this->api_host = $config['api_host'];
-        $this->api_key = $config['api_key'];
-        $this->origin = $config['origin'];
-        $this->service_provider_code = $config['service_provider_code'];
-        $this->initiator_identifier = $config['initiator_identifier'];
-        $this->security_credential = $config['security_credential'];
+        $this->public_key               = $config['public_key']             ?? config('mpesa.public_key');
+        $this->api_host                 = $config['api_host']               ?? config('mpesa.api_host');
+        $this->api_key                  = $config['api_key']                ?? config('mpesa.api_key');
+        $this->origin                   = $config['origin']                 ?? config('mpesa.origin');
+        $this->service_provider_code    = $config['service_provider_code']  ?? config('mpesa.service_provider_code');
+        $this->initiator_identifier     = $config['initiator_identifier']   ?? config('mpesa.initiator_identifier');
+        $this->security_credential      = $config['security_credential']    ?? config('mpesa.security_credential');
     }
 
 
@@ -169,6 +168,6 @@ class Config implements ConfigInterface
      */
     public function generateURI(string $endpoint): string
     {
-        return 'https://'.$this->getApiHost().$endpoint;
+        return 'https://' . $this->getApiHost() . $endpoint;
     }
 }

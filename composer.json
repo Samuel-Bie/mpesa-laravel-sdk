@@ -1,7 +1,7 @@
 {
     "name": "samuelbie/mpesa",
     "type": "library",
-    "description": "This is an interface to comunicate with Mpesa Open API Mozambique",
+    "description": "This is an interface to communicate with Mpesa Open API Mozambique",
     "keywords": [
         "Laravel",
         "OPEN-API",
@@ -15,12 +15,14 @@
         "query",
         "PHP"
     ],
+    "homepage": "https://github.com/Samuel-Bie/msisdn-mz-php.git",
     "license": "MIT",
     "authors": [
         {
             "name": "Samuel Bie",
             "email": "samuelbie@outlook.com",
-            "website": "https://samuel-bie.github.io"
+            "homepage": "https://samuel-bie.github.io",
+            "role": "Software Engineer"
         }
     ],
     "minimum-stability": "dev",
