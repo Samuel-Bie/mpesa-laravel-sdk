@@ -55,6 +55,11 @@ class Transaction implements TransactionInterface
         ];
     }
 
+    private function getConfig(): Config
+    {
+        return $this->config;
+    }
+
     /**
      * Initiates a C2B transaction on the M-Pesa API.
      * @param float $amount Valor
@@ -69,7 +74,7 @@ class Transaction implements TransactionInterface
         $msisdn = ValidationHelper::normalizeMSISDN($msisdn);
         $amount = round($amount, 2);
 
-        $endpoint = $this->config->generateURI(config('mpesa.c2b_endpoint'));
+        $endpoint = $this->getConfig()->generateURI(config('mpesa.c2b_endpoint'));
         $method = config('mpesa.c2b_method');
 
         $payload = [
@@ -110,11 +115,11 @@ class Transaction implements TransactionInterface
         $amount = round($amount, 2);
 
 
-        $endpoint = $this->config->generateURI(config('mpesa.b2c_endpoint'));
+        $endpoint = $this->getConfig()->generateURI(config('mpesa.b2c_endpoint'));
 
         $method = config('mpesa.b2c_method');
         $payload = [
-            'input_ServiceProviderCode' => $this->config->getServiceProviderCode(),
+            'input_ServiceProviderCode' => $this->getConfig()->getServiceProviderCode(),
             'input_CustomerMSISDN' => $msisdn,
             'input_Amount' => $amount,
             'input_TransactionReference' => $reference,
@@ -152,7 +157,7 @@ class Transaction implements TransactionInterface
         string $third_party_reference
     ): TransactionResponseInterface {
         $amount = round($amount, 2);
-        $endpoint = $this->config->generateURI(config('mpesa.b2b_endpoint'));
+        $endpoint = $this->getConfig()->generateURI(config('mpesa.b2b_endpoint'));
 
         $method = config('mpesa.b2b_method');
 
@@ -160,13 +165,13 @@ class Transaction implements TransactionInterface
             'input_Amount' => $amount,
             'input_TransactionReference' => $reference,
             'input_ThirdPartyReference' => $third_party_reference,
-            'input_PrimaryPartyCode' => $this->config->getServiceProviderCode(),
+            'input_PrimaryPartyCode' => $this->getConfig()->getServiceProviderCode(),
             'input_ReceiverPartyCode' => $receiver_party_code,
         ];
 
         $headers = array_merge($this->headers, [
-            'Authorization' => $this->config->getBearerToken(),
-            'Origin' => $this->config->getOrigin(),
+            'Authorization' => $this->getConfig()->getBearerToken(),
+            'Origin' => $this->getConfig()->getOrigin(),
         ]);
 
         $options = [
@@ -185,7 +190,7 @@ class Transaction implements TransactionInterface
      * @param string $transaction_id ID Transascao que precisa ser revertida
      * @param string $third_party_reference  Referencia única da transacao. Ex: 1285GVHss
      * @return TransactionResponseInterface
-    */
+     */
     public function reversal(
         float $amount,
         string $transaction_id,
@@ -193,16 +198,16 @@ class Transaction implements TransactionInterface
     ): TransactionResponseInterface {
         $amount = round($amount, 2);
 
-        $endpoint = $this->config->generateURI(config('mpesa.reversal_endpoint'));
+        $endpoint = $this->getConfig()->generateURI(config('mpesa.reversal_endpoint'));
         $method = config('mpesa.reversal_method');
 
         $payload = [
             'input_Amount' => $amount,
             'input_TransactionID' => $transaction_id,
             'input_ThirdPartyReference' => $third_party_reference,
-            'input_ServiceProviderCode' => $this->config->getServiceProviderCode(),
-            'input_InitiatorIdentifier' => $this->config->getInitiatorIdentifier(),
-            'input_SecurityCredential' => $this->config->getSecurityCredential(),
+            'input_ServiceProviderCode' => $this->getConfig()->getServiceProviderCode(),
+            'input_InitiatorIdentifier' => $this->getConfig()->getInitiatorIdentifier(),
+            'input_SecurityCredential' => $this->getConfig()->getSecurityCredential(),
 
         ];
 
@@ -226,21 +231,22 @@ class Transaction implements TransactionInterface
      * @param string $query_reference Transaction id/ Conversation ID (Gerado pelo MPesa)
      * @param string $third_party_reference  Referencia única da transacao (Gerado pelo sistema de terceiro). Ex: 1285GVHss
      * @return TransactionResponseInterface
-    */
-    public function query(string $query_reference, string $third_party_reference): TransactionResponseInterface {
+     */
+    public function query(string $query_reference, string $third_party_reference): TransactionResponseInterface
+    {
         $payload = [
             'input_QueryReference' => $query_reference,
-            'input_ServiceProviderCode' => $this->config->getServiceProviderCode(),
+            'input_ServiceProviderCode' => $this->getConfig()->getServiceProviderCode(),
             'input_ThirdPartyReference' => $third_party_reference
         ];
 
-        $endpoint = $this->config->generateURI(config('mpesa.query_endpoint'));
+        $endpoint = $this->getConfig()->generateURI(config('mpesa.query_endpoint'));
 
         $method = config('mpesa.query_method');
 
         $headers = array_merge($this->headers, [
-            'Authorization' => $this->config->getBearerToken(),
-            'Origin' => $this->config->getOrigin(),
+            'Authorization' => $this->getConfig()->getBearerToken(),
+            'Origin' => $this->getConfig()->getOrigin(),
         ]);
 
         $options = [
