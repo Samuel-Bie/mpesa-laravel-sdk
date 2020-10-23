@@ -1,7 +1,8 @@
 <?php
-namespace samuelbie\mpesa\interfaces;
+namespace Samuelbie\Mpesa\Interfaces;
 
-use samuelbie\mpesa\interfaces\TransactionResponseInterface;
+use Samuelbie\Mpesa\Interfaces\TransactionResponseInterface;
+
 /**
  * TransactionInterface
  *

@@ -1,10 +1,9 @@
 <?php
 
-namespace samuelbie\mpesa;
 
 use function GuzzleHttp\json_decode;
 use Psr\Http\Message\ResponseInterface;
-use samuelbie\mpesa\interfaces\TransactionResponseInterface;
+use Samuelbie\Mpesa\Interfaces\TransactionResponseInterface;
 
 
 /**

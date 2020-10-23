@@ -36,14 +36,14 @@
     "require-dev": {},
     "autoload": {
         "psr-4": {
-            "samuelbie\\mpesa\\": "src"
+            "Samuelbie\\Mpesa\\": "src"
         },
         "files": []
     },
     "extra": {
         "laravel": {
             "providers": [
-                "samuelbie\\mpesa\\MpesaServiceProvider"
+                "Samuelbie\\Mpesa\\MpesaServiceProvider"
             ]
         }
     },

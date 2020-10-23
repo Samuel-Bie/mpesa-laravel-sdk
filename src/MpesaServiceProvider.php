@@ -1,6 +1,6 @@
 <?php
 
-namespace samuelbie\Mpesa;
+namespace Samuelbie\Mpesa;
 
 use Illuminate\Support\ServiceProvider;
 

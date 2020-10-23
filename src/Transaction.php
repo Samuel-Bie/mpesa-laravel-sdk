@@ -1,6 +1,6 @@
 <?php
+namespace Samuelbie\Mpesa;
 
-namespace samuelbie\mpesa;
 
 /**
  * Transaction Class implements all API calls as per Transaction Interface

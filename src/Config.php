@@ -1,8 +1,9 @@
 <?php
 
-namespace samuelbie\mpesa;
+namespace Samuelbie\Mpesa;
 
-use samuelbie\mpesa\interfaces\ConfigInterface;
+use Samuelbie\Mpesa\Interfaces\ConfigInterface;
+
 
 /**
  * Config provides a standard way to get/set required M-Pesa parameters and generate Bearer Tokens

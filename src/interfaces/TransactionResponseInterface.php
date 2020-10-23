@@ -1,5 +1,5 @@
 <?php
-namespace samuelbie\mpesa\interfaces;
+namespace Samuelbie\Mpesa\Interfaces;
 /**
  * TransactionResponseInterface
  *
