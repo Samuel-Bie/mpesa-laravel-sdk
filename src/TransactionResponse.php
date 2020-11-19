@@ -1,4 +1,5 @@
 <?php
+namespace Samuelbie\Helpers;
 
 
 use function GuzzleHttp\json_decode;
