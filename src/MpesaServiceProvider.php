@@ -10,14 +10,14 @@ class MpesaServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/config/mpesa.php' => config_path('mpesa.php'),
+            __DIR__ . '/Config/mpesa.php' => config_path('mpesa.php'),
         ]);
     }
 
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/config/mpesa.php',
+            __DIR__ . '/Config/mpesa.php',
             'mpesa'
         );
     }

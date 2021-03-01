@@ -2,10 +2,10 @@
 1 - Track changes
 	git add .
 2 - Commit changes
-	git commit -m "Bug fix, and comply with psr-4 standards"
+	git commit -m "Fix Publication of config"
 
 3 - Add Tag
-	git tag 1.4.4
+	git tag 1.4.5
 
 4 - Git push
 	git push --all
