@@ -29,7 +29,6 @@
     "prefer-stable": true,
     "repositories": [],
     "require": {
-        "php": "^5.5 || ^7.0",
         "ext-curl": "*",
         "guzzlehttp/guzzle": "^5.3|^6.2|^7.0"
     },

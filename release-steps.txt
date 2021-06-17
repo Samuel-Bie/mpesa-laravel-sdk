@@ -2,10 +2,10 @@
 1 - Track changes
 	git add .
 2 - Commit changes
-	git commit -m "Fix Publication of config"
+	git commit -m "Remove PHP dependencies, Fix Namespaces"
 
 3 - Add Tag
-	git tag 1.4.5
+	git tag 1.5.0
 
 4 - Git push
 	git push --all

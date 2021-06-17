@@ -15,16 +15,16 @@ namespace Samuelbie\Mpesa;
 
 use Exception;
 use GuzzleHttp\Client;
-use samuelbie\mpesa\Config;
+use Samuelbie\Mpesa\Config;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Exception\ConnectException;
-use samuelbie\mpesa\TransactionResponse;
+use Samuelbie\Helpers\TransactionResponse;
+use Samuelbie\Mpesa\Helpers\ValidationHelper;
+use Samuelbie\Mpesa\Interfaces\ConfigInterface;
 use GuzzleHttp\Exception\TooManyRedirectsException;
-use samuelbie\mpesa\helpers\ValidationHelper;
-use samuelbie\mpesa\interfaces\ConfigInterface;
-use samuelbie\mpesa\interfaces\TransactionInterface;
-use samuelbie\mpesa\interfaces\TransactionResponseInterface;
+use Samuelbie\Mpesa\Interfaces\TransactionInterface;
+use Samuelbie\Mpesa\Interfaces\TransactionResponseInterface;
 
 /**
  * Class Transaction

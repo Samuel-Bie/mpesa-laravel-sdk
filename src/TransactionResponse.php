@@ -2,7 +2,6 @@
 namespace Samuelbie\Helpers;
 
 
-use function GuzzleHttp\json_decode;
 use Psr\Http\Message\ResponseInterface;
 use Samuelbie\Mpesa\Interfaces\TransactionResponseInterface;
 
