@@ -19,7 +19,7 @@ A partir deste SDK é possivel comunicar com o [Open-api](https://developer.mpes
 
 ## Instalação
 
-O método de instalação mais basico é usando o gestor de dependências [Composer](https://getcomposer.org/).
+O método de instalação mais basico é usando o gestor de dependências [Composer](https://getcomposer.org/). Que na verdade eu recomendo.
 
 ```bash
 composer require samuelbie/mpesa
@@ -29,7 +29,7 @@ Ou por outra basta adicionar ao suas dependencias(***composer.json***):
 
 
 ```json
-"samuelbie/mpesa": "^1.4",
+"samuelbie/mpesa": "^1.5",
 ```
 
 e depois executar o comando:
@@ -319,7 +319,7 @@ Todas as operações de ou métodos disponiveis retornam um objecto de ***Transa
 
 ## Recomendações
 
-É recomendado que q acima de tudo o usuário desta biblioteca leia a documentação do [Open-Api](https://developer.mpesa.vm.co.mz) e entenda o principio de funcionamento desta, para que possa entender os códigos de respostas, e as mensagens.
+É recomendado que que acima de tudo o usuário desta biblioteca leia a documentação do [Open-Api](https://developer.mpesa.vm.co.mz) e entenda o principio de funcionamento desta, para que possa entender os códigos de respostas, e as mensagens.
 
 
 ## Contributo
@@ -334,3 +334,4 @@ Se descobrires alguma vulnerabilidade neste pacote, por favor envie um email par
 
 Mpesa Laravel SDK é de codigo livre sob licença [MIT license](https://opensource.org/licenses/MIT).
 
+# ⚡ Abraços ⚡
