@@ -1,7 +1,9 @@
 <?php
-namespace Samuelbie\Helpers;
+namespace Samuelbie\Mpesa;
 
 
+
+use Illuminate\Queue\SerializesModels;
 use Psr\Http\Message\ResponseInterface;
 use Samuelbie\Mpesa\Interfaces\TransactionResponseInterface;
 
@@ -22,8 +24,9 @@ use Samuelbie\Mpesa\Interfaces\TransactionResponseInterface;
  * Class TransactionResponse
  * @package abdulmueid\mpesa
  */
-class TransactionResponse implements TransactionResponseInterface
+class TransactionResponse implements TransactionResponseInterface,
 {
+    use SerializesModels;
     /**
      * Full response from the M-Pesa API
      * @var string

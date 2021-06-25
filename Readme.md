@@ -154,8 +154,8 @@ Assinatura
 * Initiates a C2B transaction on the M-Pesa API.
 * @param float $amount Valor
 * @param string $msisdn numero de telefone (Ex: 847386187 / +258850233654)
-* @param string $reference Referencia da transacao. Ex: Compra de Modem 3G
-* @param string $third_party_reference  Referencia única da transacao. Ex: 1285GVHss
+* @param string $reference Referencia da transação. Ex: Compra de Modem 3G
+* @param string $third_party_reference  Referencia única da transação. Ex: 1285GVHss
 * @return TransactionResponseInterface
 * @throws Exception
  */
@@ -185,8 +185,8 @@ Signature
  * Initiates a B2C transaction on the M-Pesa API.
  * @param float $amount Valor
  * @param string $msisdn numero de telefone (Ex: 847386187 / +258850233654)
- * @param string $reference Referencia da transacao. Ex: Pagamento de comissao de venda
- * @param string $third_party_reference  Referencia única da transacao. Ex: 1285GVHss
+ * @param string $reference Referencia da transação. Ex: Pagamento de comissão de venda
+ * @param string $third_party_reference  Referencia única da transação. Ex: 1285GVHss
  * @return TransactionResponseInterface
  * @throws Exception
  */
@@ -214,8 +214,8 @@ Assinatura
     /**
      * Initiates a Reversal transaction on the M-Pesa API.
      * @param float $amount Valor a ser revertido
-     * @param string $transaction_id ID Transascao que precisa ser revertida
-     * @param string $third_party_reference  Referencia única da transacao. Ex: 1285GVHss
+     * @param string $transaction_id ID Transação que precisa ser revertida
+     * @param string $third_party_reference  Referencia única da transação. Ex: 1285GVHss
      * @return TransactionResponseInterface
     */
     public function reversal(
@@ -239,7 +239,7 @@ $response = $mpesa->reversal(10,'ACK19SSS', 'Agua2020');
 /**
  * Initiates a transaction Query on the M-Pesa API.
  * @param string $query_reference Transaction id/ Conversation ID (Gerado pelo MPesa)
- * @param string $third_party_reference  Referencia única da transacao (Gerado pelo sistema de terceiro). Ex: 1285GVHss
+ * @param string $third_party_reference  Referencia única da transação (Gerado pelo sistema de terceiro). Ex: 1285GVHss
  * @return TransactionResponseInterface
 */
 public function query(string $query_reference, string $third_party_reference): TransactionResponseInterface
