@@ -1,4 +1,5 @@
 <?php
+
 namespace Samuelbie\Mpesa;
 
 
@@ -24,9 +25,10 @@ use Samuelbie\Mpesa\Interfaces\TransactionResponseInterface;
  * Class TransactionResponse
  * @package abdulmueid\mpesa
  */
-class TransactionResponse implements TransactionResponseInterface,
+class TransactionResponse implements TransactionResponseInterface
 {
     use SerializesModels;
+
     /**
      * Full response from the M-Pesa API
      * @var string
@@ -86,7 +88,7 @@ class TransactionResponse implements TransactionResponseInterface,
         $body = $response ? json_decode($response->getBody()->getContents()) : json_decode('[]');
 
         $this->response = json_encode($response);
-        $this->statusCode  = $response? $response->getStatusCode() : 460;
+        $this->statusCode  = $response ? $response->getStatusCode() : 460;
         $this->body  = $body;
         $this->code = $body->output_ResponseCode ?? '';
         $this->description = $body->output_ResponseDesc ?? '';
@@ -164,5 +166,10 @@ class TransactionResponse implements TransactionResponseInterface,
     public function getBody()
     {
         return $this->body;
+    }
+
+    public function serialize()
+    {
+        return $this->__serialize();
     }
 }

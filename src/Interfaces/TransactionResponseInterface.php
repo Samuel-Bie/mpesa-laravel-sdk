@@ -1,5 +1,7 @@
 <?php
+
 namespace Samuelbie\Mpesa\Interfaces;
+
 /**
  * TransactionResponseInterface
  *
@@ -72,4 +74,7 @@ interface TransactionResponseInterface
      */
     public function getBody();
 
+    public function serialize();
+
+    public function unserialize();
 }
