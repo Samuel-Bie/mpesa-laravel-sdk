@@ -73,8 +73,4 @@ interface TransactionResponseInterface
      * @return string
      */
     public function getBody();
-
-    public function serialize();
-
-    public function unserialize();
 }

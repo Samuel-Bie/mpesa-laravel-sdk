@@ -167,9 +167,4 @@ class TransactionResponse implements TransactionResponseInterface
     {
         return $this->body;
     }
-
-    public function serialize()
-    {
-        return $this->__serialize();
-    }
 }
