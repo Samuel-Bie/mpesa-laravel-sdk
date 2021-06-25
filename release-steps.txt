@@ -2,10 +2,10 @@
 1 - Track changes
 	git add .
 2 - Commit changes
-	git commit -m "Remove all Serialization fixes"
+	git commit -m "Bug Fixes"
 
 3 - Add Tag
-	git tag 1.5.4
+	git tag 1.5.5
 
 4 - Git push
 	git push --all

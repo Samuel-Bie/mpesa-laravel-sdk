@@ -87,7 +87,8 @@ class TransactionResponse implements TransactionResponseInterface
 
         $body = $response ? json_decode($response->getBody()->getContents()) : json_decode('[]');
 
-        $this->response = json_encode($response);
+
+        $this->response = json_encode($response, JSON_UNESCAPED_UNICODE);
         $this->statusCode  = $response ? $response->getStatusCode() : 460;
         $this->body  = $body;
         $this->code = $body->output_ResponseCode ?? '';
