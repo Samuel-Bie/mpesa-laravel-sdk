@@ -259,6 +259,11 @@ class Transaction implements TransactionInterface
 
     private function executeRequest($method, $endpoint, $options): TransactionResponseInterface
     {
+        $options = array_merge($options, [
+            // TODO We have to check this
+            'connect_timeout' => 120,
+        ]);
+        // dd($options);
         try {
             //code...
             $httpClient = new Client();

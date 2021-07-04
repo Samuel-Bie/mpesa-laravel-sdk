@@ -5,7 +5,7 @@
 	git commit -m "Bug Fixes"
 
 3 - Add Tag
-	git tag 1.5.5
+	git tag 1.5.6
 
 4 - Git push
 	git push --all
