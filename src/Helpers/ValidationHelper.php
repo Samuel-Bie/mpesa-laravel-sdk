@@ -1,8 +1,7 @@
 <?php
-namespace Samuelbie\Mpesa\Helpers;
-
 
 /**
+ * Class ValidationHelper
  * ValidationHelper validates and normalizes MSISDN as per ITU E.164 standard
  *
  * @author      Kishan Nareshpal Jadav <kishan_jadav@hotmail.com | https://kishannareshpal.github.io>
@@ -12,6 +11,7 @@ namespace Samuelbie\Mpesa\Helpers;
  * @link        https://github.com/abdulmueid/mpesa-php-api
  */
 
+namespace Samuelbie\Mpesa\Helpers;
 
 use Exception;
 

@@ -4,7 +4,6 @@ namespace Samuelbie\Mpesa;
 
 use Samuelbie\Mpesa\Interfaces\ConfigInterface;
 
-
 /**
  * Config provides a standard way to get/set required M-Pesa parameters and generate Bearer Tokens
  *

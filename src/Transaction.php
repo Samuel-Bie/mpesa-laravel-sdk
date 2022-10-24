@@ -1,6 +1,4 @@
 <?php
-namespace Samuelbie\Mpesa;
-
 
 /**
  * Transaction Class implements all API calls as per Transaction Interface
@@ -11,7 +9,6 @@ namespace Samuelbie\Mpesa;
  *
  * @link        https://github.com/abdulmueid/mpesa-php-api
  */
-
 
 use Exception;
 use GuzzleHttp\Client;
@@ -30,6 +27,9 @@ use Samuelbie\Mpesa\Interfaces\TransactionResponseInterface;
  * Class Transaction
  * @package abdulmueid\mpesa
  */
+
+namespace Samuelbie\Mpesa;
+
 class Transaction implements TransactionInterface
 {
     /**
@@ -69,8 +69,12 @@ class Transaction implements TransactionInterface
      * @return TransactionResponseInterface
      * @throws Exception
      */
-    public function c2b(float $amount, string $msisdn, string $reference, string $third_party_reference): TransactionResponseInterface
-    {
+    public function c2b(
+        float $amount,
+        string $msisdn,
+        string $reference,
+        string $third_party_reference
+    ): TransactionResponseInterface {
         $msisdn = ValidationHelper::normalizeMSISDN($msisdn);
         $amount = round($amount, 2);
 
@@ -109,8 +113,12 @@ class Transaction implements TransactionInterface
      * @return TransactionResponseInterface
      * @throws Exception
      */
-    public function b2c(float $amount, string $msisdn, string $reference, string $third_party_reference): TransactionResponseInterface
-    {
+    public function b2c(
+        float $amount,
+        string $msisdn,
+        string $reference,
+        string $third_party_reference
+    ): TransactionResponseInterface {
         $msisdn = ValidationHelper::normalizeMSISDN($msisdn);
         $amount = round($amount, 2);
 
@@ -229,11 +237,14 @@ class Transaction implements TransactionInterface
     /**
      * Initiates a transaction Query on the M-Pesa API.
      * @param string $query_reference Transaction id/ Conversation ID (Gerado pelo MPesa)
-     * @param string $third_party_reference  Referencia única da transação (Gerado pelo sistema de terceiro). Ex: 1285GVHss
+     * @param string $third_party_reference  Referencia única da transação (Gerado pelo sistema de terceiro).
+     *  Ex: 1285GVHss
      * @return TransactionResponseInterface
      */
-    public function query(string $query_reference, string $third_party_reference): TransactionResponseInterface
-    {
+    public function query(
+        string $query_reference,
+        string $third_party_reference
+    ): TransactionResponseInterface {
         $payload = [
             'input_QueryReference' => $query_reference,
             'input_ServiceProviderCode' => $this->getConfig()->getServiceProviderCode(),
