@@ -2,12 +2,9 @@
 
 namespace Samuelbie\Mpesa;
 
-
-
 use Illuminate\Queue\SerializesModels;
 use Psr\Http\Message\ResponseInterface;
 use Samuelbie\Mpesa\Interfaces\TransactionResponseInterface;
-
 
 /**
  * TransactionResponse parses all incoming responses from M-Pesa and provides the information in a clean way
@@ -79,14 +76,11 @@ class TransactionResponse implements TransactionResponseInterface
 
     /**
      * TransactionResponse constructor.
-     * @param string $response
+     * @param ResponseInterface $response
      */
     public function __construct(ResponseInterface $response = null)
     {
-
-
         $body = $response ? json_decode($response->getBody()->getContents()) : json_decode('[]');
-
 
         $this->response = json_encode($response, JSON_UNESCAPED_UNICODE);
         $this->statusCode  = $response ? $response->getStatusCode() : 460;

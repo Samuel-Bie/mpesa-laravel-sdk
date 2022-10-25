@@ -14,12 +14,6 @@ use Samuelbie\Mpesa\Interfaces\ConfigInterface;
  * @link        https://github.com/abdulmueid/mpesa-php-api
  */
 
-
-
-/**
- * Class Config
- * @package abdulmueid\mpesa
- */
 class Config implements ConfigInterface
 {
     /**

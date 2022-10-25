@@ -1,14 +1,6 @@
 <?php
 
-/**
- * Transaction Class implements all API calls as per Transaction Interface
- *
- * @author      Abdul Mueid Akhtar <abdul.mueid@gmail.com>
- * @copyright   Copyright (c) Abdul Mueid akhtar
- * @license     http://mit-license.org/
- *
- * @link        https://github.com/abdulmueid/mpesa-php-api
- */
+namespace Samuelbie\Mpesa;
 
 use Exception;
 use GuzzleHttp\Client;
@@ -24,11 +16,14 @@ use Samuelbie\Mpesa\Interfaces\TransactionInterface;
 use Samuelbie\Mpesa\Interfaces\TransactionResponseInterface;
 
 /**
- * Class Transaction
- * @package abdulmueid\mpesa
+ * Transaction Class implements all API calls as per Transaction Interface
+ *
+ * @author      Abdul Mueid Akhtar <abdul.mueid@gmail.com>
+ * @copyright   Copyright (c) Abdul Mueid akhtar
+ * @license     http://mit-license.org/
+ *
+ * @link        https://github.com/abdulmueid/mpesa-php-api
  */
-
-namespace Samuelbie\Mpesa;
 
 class Transaction implements TransactionInterface
 {

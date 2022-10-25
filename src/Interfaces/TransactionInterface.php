@@ -1,4 +1,5 @@
 <?php
+
 namespace Samuelbie\Mpesa\Interfaces;
 
 use Samuelbie\Mpesa\Interfaces\TransactionResponseInterface;
@@ -16,7 +17,6 @@ use Samuelbie\Mpesa\Interfaces\TransactionResponseInterface;
 
 /**
  * Interface TransactionInterface
- * @package abdulmueid\mpesa\interfaces
  */
 interface TransactionInterface
 {
@@ -28,7 +28,12 @@ interface TransactionInterface
      * @param string $third_party_reference
      * @return TransactionResponseInterface
      */
-    public function c2b(float $amount, string $msisdn, string $reference, string $third_party_reference): TransactionResponseInterface;
+    public function c2b(
+        float $amount,
+        string $msisdn,
+        string $reference,
+        string $third_party_reference
+    ): TransactionResponseInterface;
 
     /**
      * Initiates a B2C transaction on the M-Pesa API.
@@ -38,7 +43,12 @@ interface TransactionInterface
      * @param string $third_party_reference
      * @return TransactionResponseInterface
      */
-    public function b2c(float $amount, string $msisdn, string $reference, string $third_party_reference): TransactionResponseInterface;
+    public function b2c(
+        float $amount,
+        string $msisdn,
+        string $reference,
+        string $third_party_reference
+    ): TransactionResponseInterface;
 
     /**
      * Initiates a B2B transaction on the M-Pesa API.
@@ -48,7 +58,12 @@ interface TransactionInterface
      * @param string $third_party_reference
      * @return TransactionResponseInterface
      */
-    public function b2b(float $amount, string $receiver_party_code, string $reference, string $third_party_reference): TransactionResponseInterface;
+    public function b2b(
+        float $amount,
+        string $receiver_party_code,
+        string $reference,
+        string $third_party_reference
+    ): TransactionResponseInterface;
 
     /**
      * Initiates a transaction Reversal on the M-Pesa API.
@@ -57,7 +72,11 @@ interface TransactionInterface
      * @param string $third_party_reference
      * @return TransactionResponseInterface
      */
-    public function reversal(float $amount, string $transaction_id, string $third_party_reference): TransactionResponseInterface;
+    public function reversal(
+        float $amount,
+        string $transaction_id,
+        string $third_party_reference
+    ): TransactionResponseInterface;
 
     /**
      * Initiates a transaction Query on the M-Pesa API.

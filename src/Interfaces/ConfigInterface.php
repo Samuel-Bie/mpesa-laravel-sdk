@@ -1,5 +1,7 @@
 <?php
+
 namespace Samuelbie\Mpesa\Interfaces;
+
 /**
  * ConfigInterface
  *
@@ -10,11 +12,6 @@ namespace Samuelbie\Mpesa\Interfaces;
  * @link        https://github.com/abdulmueid/mpesa-php-api
  */
 
-
-/**
- * Interface ConfigInterface
- * @package abdulmueid\mpesa\interfaces
- */
 interface ConfigInterface
 {
 
