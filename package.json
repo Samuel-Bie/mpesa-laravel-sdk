@@ -10,7 +10,7 @@
     "scripts": {
         "cm": "git-cz",
         "cm:retry": "git-cz --retry",
-        "test": "jest"
+        "test": "jest --passWithNoTests"
     },
     "devDependencies": {
         "@commitlint/cli": "^8.1.0",
