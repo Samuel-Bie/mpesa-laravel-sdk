@@ -9,7 +9,8 @@
     "private": false,
     "scripts": {
         "cm": "git-cz",
-        "cm:retry": "git-cz --retry"
+        "cm:retry": "git-cz --retry",
+        "test": "jest"
     },
     "devDependencies": {
         "@commitlint/cli": "^8.1.0",
