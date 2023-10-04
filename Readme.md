@@ -167,7 +167,7 @@ Exemplo
 
 ```php
 
-use samuelbie\mpesa\Transaction;
+use Samuelbie\Mpesa\Transaction;
 $mpesa = new Transaction();
 $response = $mpesa->c2b('10','258845968745', 'reference' ,'unique_reference');
 
@@ -198,7 +198,7 @@ Exemplo
 
 ```php
 
-use samuelbie\mpesa\Transaction;
+use Samuelbie\Mpesa\Transaction;
 $mpesa = new Transaction();
 $response = $mpesa->b2c('10','258845968745', 'Comissao' ,'unique_reference');
 ```
@@ -228,7 +228,7 @@ Assinatura
 Exemplo
 
 ```php
-use samuelbie\mpesa\Transaction;
+use Samuelbie\Mpesa\Transaction;
 $mpesa = new Transaction();
 $response = $mpesa->reversal(10,'ACK19SSS', 'Agua2020');
 ```
@@ -248,7 +248,7 @@ public function query(string $query_reference, string $third_party_reference): T
 Exemplo
 
 ```php
-use samuelbie\mpesa\Transaction;
+use Samuelbie\Mpesa\Transaction;
 $mpesa = new Transaction();
 $response = $mpesa->query('56b97c7a59dd40738843ca7234796c4d', 'Agua2020');
 ```
