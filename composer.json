@@ -1,5 +1,5 @@
 {
-    "name": "samuelbie/mpesa",
+    "name": "samuelbie/mpesa-fork",
     "type": "library",
     "description": "This is an interface to communicate with Mpesa Open API Mozambique",
     "keywords": [
