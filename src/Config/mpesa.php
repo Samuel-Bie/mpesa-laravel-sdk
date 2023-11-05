@@ -10,7 +10,7 @@ return [
     |
     */
     'api_host'              => env('MPESA_API_HOST', 'api.sandbox.vm.co.mz'),
-
+    
     /*
     |--------------------------------------------------------------------------
     | Public key for use in M-Pesa API
@@ -38,6 +38,8 @@ return [
     |
     */
     'origin'                => env('MPESA_ORIGIN', '*'),
+
+    'verifySSL'             => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -79,4 +81,5 @@ return [
     "b2c_method"        => env('MPESA_B2C_METHOD', "POST"),
     "query_method"      => env('MPESA_Query_METHOD', "GET"),
     "reversal_method"   => env('MPESA_Reversal_METHOD', "PUT"),
+    
 ];
