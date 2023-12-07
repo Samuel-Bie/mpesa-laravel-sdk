@@ -272,7 +272,9 @@ class Transaction implements TransactionInterface
         // dd($options);
         try {
             //code...
-            $httpClient = new Client();
+            $httpClient = new Client([
+                'verify' => config('mpesa.verifySSL')
+            ]);
             $response = $httpClient->request($method, $endpoint, $options);
             // $response->getStatusCode();
             // $response->getBody();

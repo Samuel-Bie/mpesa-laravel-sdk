@@ -84,6 +84,8 @@ return [
     */
     'origin'                => env('MPESA_ORIGIN', '*'),
 
+    'verifySSL'             => false,
+
     /*
     |--------------------------------------------------------------------------
     | Service Provider Code of M-Pesa API
